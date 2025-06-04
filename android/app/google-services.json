@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "268088515637",
+    "project_id": "verify-identity-d6ed5",
+    "storage_bucket": "verify-identity-d6ed5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268088515637:android:3a08be117ac9493ebee57c",
+        "android_client_info": {
+          "package_name": "com.example.verify_identity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTkt2CPxYQcWMgEbk1JhPswqhYNIrxOXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

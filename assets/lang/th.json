@@ -1,0 +1,27 @@
+
+
+
+{
+  "welcome": "ยินดีต้อนรับสู่ระบบ!",
+  "login": "เข้าสู่ระบบ",
+  "forgot_password": "ลืมรหัสผ่าน?",
+  "email": "อีเมล",
+  "password": "รหัสผ่าน",
+  "sign_up": "ยังไม่มีสิทธิเข้าระบบ? สมัครสมาชิก",
+  "error_massage_login": "❌  กรอกข้อมูลไม่ถูกต้อง!",
+  "app_name": "Verify Identity",
+
+  "menu_product": "สินค้า",
+  "menu_main": "หน้าหลัก",
+  "menu_history": "ประวัติ",
+  "menu_profile": "โปรไฟล์",
+
+  "name_profile": "นายธนาคาร สุดสน",
+  "email_profile": "thanakharnsudson4@gmail.com",
+  "phone_profile": "0650565665",
+
+  "func_edite_profile": "แก้ไขข้อมูลส่วนตัว",
+  "func_chang_password": "เปลี่ยนรหัสผ่าน",
+  "func_history": "ประวัติคำสั่งซื้อ",
+  "func_sign_out": "ออกจากระบบ"
+}
