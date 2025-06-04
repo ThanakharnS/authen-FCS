@@ -8,6 +8,14 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
+-----------------------------   account 01
+User: test01@gmail.com
+Pass:0123456789
+-----------------------------   account 02
+User: test02@gmail.com
+Pass:111111
+
+
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
