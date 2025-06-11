@@ -24,7 +24,19 @@
   "func_edite_profile": "Edit Profile",
   "func_chang_password": "Change Password",
   "func_history": "Order History",
-  "func_sign_out": "Sign Out"
+  "func_sign_out": "Sign Out",
+
+
+  "header_txt_forgot_password": "Forget Password",
+  "header_txt_reset_password": "Reset Password",
+  "label_txt_input_email": "Email ",
+  "txt_input_password": "New Password ",
+  "confirm_txt_input_password": "Confirm New Password ",
+  "bnt_submit_change": "Change Password",
+  "dialog_massage_success": "Change Password Success !!!"
+
+
+
 
 
 }

@@ -82,7 +82,6 @@ class LoginProvider extends ChangeNotifier {
   }
 
 
-
   @override
   void dispose() {
     emailController.dispose();

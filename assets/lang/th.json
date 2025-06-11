@@ -23,5 +23,13 @@
   "func_edite_profile": "แก้ไขข้อมูลส่วนตัว",
   "func_chang_password": "เปลี่ยนรหัสผ่าน",
   "func_history": "ประวัติคำสั่งซื้อ",
-  "func_sign_out": "ออกจากระบบ"
+  "func_sign_out": "ออกจากระบบ",
+
+  "header_txt_forgot_password": "ลืมรหัสผ่าน",
+  "header_txt_reset_password": "รีเซ็ตรหัสผ่าน",
+  "label_txt_input_email": "อีเมล",
+  "txt_input_password": "รหัสผ่านใหม่",
+  "confirm_txt_input_password": "ยืนยันรหัสผ่านใหม่",
+  "bnt_submit_change": "ยืนยันการเปลี่ยนรหัสผ่าน",
+  "dialog_massage_success": "เปลี่ยนรหัสผ่านสำเร็จ !!!"
 }

@@ -7,6 +7,7 @@ import 'package:verify_identity/Provider/home_provider.dart';
 import 'package:verify_identity/Provider/login_provider.dart';
 import 'package:verify_identity/Provider/splash_creen_provider.dart';
 
+import 'Provider/forgot_password_provider.dart';
 import 'Provider/menu_profile_provider.dart';
 
 void main() async {
@@ -31,6 +32,7 @@ void main() async {
           ChangeNotifierProvider(create: (_) => LoginProvider()),
           ChangeNotifierProvider(create: (_) => HomePageProvider()),
           ChangeNotifierProvider(create: (_) => MenuProfileProvider()),
+          ChangeNotifierProvider(create: (_) => ForgotPasswordPageProvider()),
 
         ],
         child: const MyApp(),

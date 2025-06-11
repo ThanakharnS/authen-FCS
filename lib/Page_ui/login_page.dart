@@ -2,6 +2,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:verify_identity/Page_ui/forgot_password_page.dart';
 import 'package:verify_identity/Provider/login_provider.dart';
 import 'home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -205,7 +206,10 @@ class LoginPage extends StatefulWidget{
                      const SizedBox(height: 12),
                      TextButton(
                        onPressed: () {
-                         // ไปหน้าสมัครสมาชิก
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
+                         );
                        },
                        child: Text(
                          'forgot_password'.tr(),
