@@ -6,49 +6,18 @@ import 'package:flutter/material.dart';
 
 class ForgotPasswordPageProvider extends ChangeNotifier {
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
-  bool isNewPasswordObscured = true;
-  bool isConfirmPasswordObscured = true;
-
   final emailController = TextEditingController();
-  final newPasswordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
 
-  Future<String?> updatePassword({
-    required String email,
-    required String newPassword,
-    required String confirmPassword,
-  }) async {
-    if (newPassword != confirmPassword) {
-      return "รหัสผ่านไม่ตรงกัน";
-    }
-
+  Future<void> sendResetEmail(String email) async {
     try {
-      final user = _auth.currentUser;
-      if (user != null && user.email == email.trim()) {
-        await user.updatePassword(newPassword);
-        return null; // success
-      } else {
-        return "ผู้ใช้ยังไม่ได้ล็อกอิน หรืออีเมลไม่ตรง";
-      }
-    } on FirebaseAuthException catch (e) {
-      return e.message;
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      print('ส่งอีเมลรีเซ็ตรหัสผ่านเรียบร้อย');
     } catch (e) {
-      return "เกิดข้อผิดพลาด: $e";
+      print('เกิดข้อผิดพลาด: $e');
     }
   }
 
 
 
-  void toggleNewPasswordVisibility() {
-    isNewPasswordObscured = !isNewPasswordObscured;
-    notifyListeners();
-  }
-
-  void toggleConfirmPasswordVisibility() {
-    isConfirmPasswordObscured = !isConfirmPasswordObscured;
-    notifyListeners();
-  }
 
 }

@@ -3,7 +3,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:verify_identity/Page_ui/forgot_password_page.dart';
+import 'package:verify_identity/Page_ui/signup_page.dart';
 import 'package:verify_identity/Provider/login_provider.dart';
+import 'package:verify_identity/Provider/signup_provider.dart';
 import 'home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -97,7 +99,6 @@ class LoginPage extends StatefulWidget{
            ),
          ),
 
-         // เนื้อหา login card อยู่ตรงกลาง
          Center(
            child: SingleChildScrollView(
              padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -222,7 +223,10 @@ class LoginPage extends StatefulWidget{
                      ),
                      TextButton(
                        onPressed: () {
-                         // ไปหน้าสมัครสมาชิก
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(builder: (context) => const SignUpPage()),
+                         );
                        },
                        child: Text(
                            'sign_up'.tr(),
@@ -239,6 +243,23 @@ class LoginPage extends StatefulWidget{
              ),
            ),
          ),
+
+         Positioned(
+           bottom: 20,
+           left: 0,
+           right: 0,
+           child: Text(
+             'Version App : 1.0.0',
+             textAlign: TextAlign.center,
+             style: TextStyle(
+               fontSize: 16,
+               fontWeight: FontWeight.bold,
+               color: Colors.white,
+             ),
+           ),
+         ),
+
+
        ],
      );
    }

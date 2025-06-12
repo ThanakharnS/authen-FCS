@@ -2,7 +2,6 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -17,25 +16,6 @@ class ForgotPasswordPage extends StatefulWidget {
 
 
 class _ForgotPasswordPageState  extends State<ForgotPasswordPage> {
-
-  void handleResetPassword() async {
-    final provider = Provider.of<ForgotPasswordPageProvider>(context, listen: false);
-    final result = await provider.updatePassword(
-      email: provider.emailController.text.trim(),
-      newPassword: provider.newPasswordController.text.trim(),
-      confirmPassword: provider.confirmPasswordController.text.trim(),
-    );
-
-    if (result == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-         SnackBar(content: Text('dialog_massage_success'.tr())),
-      );
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(result)),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +54,6 @@ class _ForgotPasswordPageState  extends State<ForgotPasswordPage> {
                 ),
                 const SizedBox(height: 16),
 
-                // Email field
                 TextField(
                   controller: provider.emailController,
                   decoration: InputDecoration(
@@ -82,56 +61,35 @@ class _ForgotPasswordPageState  extends State<ForgotPasswordPage> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                const SizedBox(height: 12),
-
-                TextField(
-                  controller: provider.newPasswordController,
-                  obscureText: provider.isNewPasswordObscured,
-                  decoration: InputDecoration(
-                    labelText: 'txt_input_password'.tr(),
-                    border: const OutlineInputBorder(),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        provider.isNewPasswordObscured
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                      ),
-                      onPressed: provider.toggleNewPasswordVisibility,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 12),
-
-                TextField(
-                  controller: provider.confirmPasswordController,
-                  obscureText: provider.isConfirmPasswordObscured,
-                  decoration: InputDecoration(
-                    labelText: 'confirm_txt_input_password'.tr(),
-                    border: const OutlineInputBorder(),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        provider.isConfirmPasswordObscured
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                      ),
-                      onPressed: provider.toggleConfirmPasswordVisibility,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 60),
 
                 ElevatedButton(
-                  onPressed: handleResetPassword,
+                  onPressed: () async {
+                    final email = provider.emailController.text.trim();
+                    if (email.isNotEmpty) {
+                      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+                      provider.emailController.clear();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('ส่งลิงก์รีเซ็ตรหัสผ่านไปยังอีเมลแล้ว')),
+                      );
+                    }else{
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('กรุณากรอก อีเมล!!!')),
+                      );
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueGrey,
-                    minimumSize: const Size.fromHeight(48),
+                    backgroundColor: Colors.white60,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                   child: Text(
                     'bnt_submit_change'.tr(),
                     style: GoogleFonts.kanit(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.blueGrey,
                     ),
                   ),
                 ),
@@ -140,10 +98,8 @@ class _ForgotPasswordPageState  extends State<ForgotPasswordPage> {
           ),
         ),
       ),
-
-
-
     );
   }
+
 
 }
