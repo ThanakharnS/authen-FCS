@@ -13,7 +13,7 @@ dependencies:
   # Localization
   flutter_localizations:
     sdk: flutter
-  intl: ^0.19.0
+  intl: ^0.20.2
 
   # Firebase
   firebase_core: ^3.13.0
@@ -29,6 +29,9 @@ dependencies:
 
   # languages
   google_fonts: ^6.2.1
+
+  # http/dio
+  dio: ^5.9.0
 
   # lang
   easy_localization: ^3.0.7+1
