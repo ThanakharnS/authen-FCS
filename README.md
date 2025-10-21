@@ -1,5 +1,7 @@
 # verify_identity
 
+====>   Update Code 21/10/68 
+
 A new Flutter project.
 
 ## Getting Started
@@ -10,10 +12,10 @@ A few resources to get you started if this is your first Flutter project:
 
 -----------------------------   account 01
 User: test01@gmail.com
-Pass:0123456789
+Pass:1111111111
 -----------------------------   account 02
 User: test02@gmail.com
-Pass:111111
+Pass:2222222222
 
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
@@ -24,12 +26,5 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-## ==================>   Login  <===============================
-## Login by UserName & Password
-## account01 : 
-## UserName :test01@gmail.com
-## Password :0123456789
-## account02 :
-## UserName :test02@gmail.com
-## Password :111111
+-  เมื่อ login Success  หน้าแรกจะเป็นการเรียก API เป็นข้อมูลสินค้า โทรศัพท์มือถือ
 
