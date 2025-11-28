@@ -8,6 +8,7 @@ import 'package:verify_identity/Provider/login_provider.dart';
 import 'package:verify_identity/Provider/signup_provider.dart';
 import 'package:verify_identity/Provider/splash_creen_provider.dart';
 
+import 'Provider/ProductDetailProvider.dart';
 import 'Provider/forgot_password_provider.dart';
 import 'Provider/menu_profile_provider.dart';
 
@@ -35,6 +36,8 @@ void main() async {
           ChangeNotifierProvider(create: (_) => MenuProfileProvider()),
           ChangeNotifierProvider(create: (_) => ForgotPasswordPageProvider()),
           ChangeNotifierProvider(create: (_) => SignUpPageProvider()),
+          //==> เพิ่ม
+          ChangeNotifierProvider(create: (_) => ProductDetailProvider()),
 
         ],
         child: const MyApp(),

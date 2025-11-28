@@ -35,6 +35,7 @@ class _MenuProductPageState extends State<MenuProductPage> {
           ),
         ),
         backgroundColor: Colors.blueAccent,
+        automaticallyImplyLeading: false, // ปิดปุ่มย้อนกลับ
       ),
       body: FutureBuilder<List<Product>>(
         future: _productsFuture,
