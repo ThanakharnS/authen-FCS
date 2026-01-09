@@ -6,7 +6,7 @@ class ProductService {
 
   final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: 'http://192.168.1.188:9999/api',
+      baseUrl: 'http://192.168.1.103:9999/api',
       connectTimeout: const Duration(seconds: 10),
     ),
   );

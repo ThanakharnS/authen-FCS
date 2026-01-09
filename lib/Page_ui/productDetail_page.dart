@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../Provider/ProductDetailProvider.dart';
 import '../model/product_model.dart';
-import 'menu_product.dart';
 
 class ProductDetailPage extends StatelessWidget {
   final Product product; // รับข้อมูลสินค้า
@@ -22,12 +21,9 @@ class ProductDetailPage extends StatelessWidget {
           onPressed: () {
             // รีเซ็ต quantity ก่อนกลับ
             quantityProvider.reset();
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const MenuProductPage(),
-              ),
-            );
+
+            // ⬅️ กลับไปหน้าเมนูหลักที่มี Bottom Navigation Bar
+            Navigator.pop(context);
           },
         ),
       ),
@@ -105,21 +101,16 @@ class ProductDetailPage extends StatelessWidget {
                           SnackBar(
                             content: Text(
                               "ซื้อ ${product.name} จำนวน ${quantityProvider.quantity} ชิ้นเรียบร้อย!",
-                                textAlign: TextAlign.center
+                              textAlign: TextAlign.center,
                             ),
-                          ),
-                        );
-
-                        // ไปหน้า MenuProductPage
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const MenuProductPage(),
                           ),
                         );
 
                         // รีเซ็ต quantity
                         quantityProvider.reset();
+
+                        // ⬅️ กลับไปหน้าเมนูหลัก
+                        Navigator.pop(context);
                       }
                           : null,
                       child: const Text(

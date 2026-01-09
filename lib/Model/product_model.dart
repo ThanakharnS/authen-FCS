@@ -19,15 +19,13 @@ class Product {
 
   // Factory constructor สำหรับแปลง JSON Map เป็น Product Object
   factory Product.fromJson(Map<String, dynamic> json) {
-
     //===> set image for support version ios & android
     String? rawImage = json['image'];
-    // แก้ปัญหา localhost เพื่อให้ Android โหลดรูปได้
     String? fixedImage;
     if (rawImage != null) {
       fixedImage = rawImage.replaceFirst(
         "http://localhost",
-        "http://192.168.1.188",   // Android Emulator
+        "http://192.168.1.103",
       );
     }
 

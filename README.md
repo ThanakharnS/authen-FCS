@@ -1,3 +1,11 @@
+
+===> Update Code final: 09/01/69
+     ==> click Product and Show Detail on Product List
+     ==> click Amount Product 
+     ==> create bottom buy and Event Click Show PopUp Warning
+
+
+
 # verify_identity
 
 ====>   Update Code 21/10/68 
